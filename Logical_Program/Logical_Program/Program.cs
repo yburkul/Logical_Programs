@@ -23,10 +23,35 @@ namespace Logical_Program
 
         }
 
+        public void PerfectNumber()
+        {
+            int sum = 0;
+            Console.WriteLine("Enter a Number");
+            int number = int.Parse(Console.ReadLine());
+
+            for(int i = 1; i < number; i++)
+            {
+                if (number % i == 0)
+                {
+                    sum += i;
+                }
+
+            }
+            if (sum == number)
+            {
+                Console.WriteLine("It is Perfect Number ");
+            }
+            else
+            {
+                Console.WriteLine("It is not a Perfect Number");
+            }
+        }
+
         public static void Main(string[] args)
         {
             Console.WriteLine("Enter a number for relative problem.\n");
             Console.WriteLine("1 for Fibonacci Series");
+            Console.WriteLine("2 for Perfect Number");
             int Problem = Convert.ToInt32(Console.ReadLine());
             LogicalProgram logicalProgram = new LogicalProgram();
 
@@ -34,6 +59,9 @@ namespace Logical_Program
             {
                 case 1:
                     logicalProgram.Fibonacci();
+                    break;
+                case 2:
+                        logicalProgram.PerfectNumber();
                     break;
                 default:
                     Console.WriteLine("You Enter Invalid Number");
