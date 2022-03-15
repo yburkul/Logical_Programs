@@ -47,11 +47,35 @@ namespace Logical_Program
             }
         }
 
+        public void PrimeNumber()
+        {
+            int Count = 0;
+            Console.WriteLine("Enter a Number");
+            int number = int.Parse(Console.ReadLine());
+
+            for (int i = 1; i <= number; i++)
+            {
+                if (number % i == 0)
+                    Count++;
+            }
+            if (Count == 2)
+            {
+                Console.WriteLine("It is Prime Number");
+            }
+            else
+            {
+                Console.WriteLine("It is Not Prime Number");
+            }
+
+
+        }
+
         public static void Main(string[] args)
         {
             Console.WriteLine("Enter a number for relative problem.\n");
             Console.WriteLine("1 for Fibonacci Series");
             Console.WriteLine("2 for Perfect Number");
+            Console.WriteLine("3 for Prime Number");
             int Problem = Convert.ToInt32(Console.ReadLine());
             LogicalProgram logicalProgram = new LogicalProgram();
 
@@ -61,7 +85,10 @@ namespace Logical_Program
                     logicalProgram.Fibonacci();
                     break;
                 case 2:
-                        logicalProgram.PerfectNumber();
+                    logicalProgram.PerfectNumber();
+                    break;
+                case 3:
+                    logicalProgram.PrimeNumber();
                     break;
                 default:
                     Console.WriteLine("You Enter Invalid Number");
