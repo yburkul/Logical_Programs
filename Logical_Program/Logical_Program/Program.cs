@@ -70,12 +70,31 @@ namespace Logical_Program
 
         }
 
+        public void ReverseNumber()
+        {
+            int reverse = 0;
+            int remainder;
+            Console.WriteLine("Enter a Number");
+           int number = int.Parse(Console.ReadLine());
+            //int number = Convert.ToInt32(Console.ReadLine());
+            while (number != 0)
+            {
+                remainder = number % 10;
+                reverse = reverse * 10 + remainder;
+                number = number / 10;
+
+            }
+            Console.WriteLine("Reverse the Number: " + reverse);
+
+        }
+
         public static void Main(string[] args)
         {
             Console.WriteLine("Enter a number for relative problem.\n");
             Console.WriteLine("1 for Fibonacci Series");
             Console.WriteLine("2 for Perfect Number");
             Console.WriteLine("3 for Prime Number");
+            Console.WriteLine("4 for Reverse Number");
             int Problem = Convert.ToInt32(Console.ReadLine());
             LogicalProgram logicalProgram = new LogicalProgram();
 
@@ -89,6 +108,9 @@ namespace Logical_Program
                     break;
                 case 3:
                     logicalProgram.PrimeNumber();
+                    break;
+                case 4:
+                    logicalProgram.ReverseNumber();
                     break;
                 default:
                     Console.WriteLine("You Enter Invalid Number");
